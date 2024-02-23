@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "769648092836",
+    "project_id": "goldenduck-3e3a7",
+    "storage_bucket": "goldenduck-3e3a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769648092836:android:b392b43a9cd57234c3a831",
+        "android_client_info": {
+          "package_name": "com.migoldenduck"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL6Z5ebjqJ7ACaJnUOkiqgMO0-Y_EvPCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
