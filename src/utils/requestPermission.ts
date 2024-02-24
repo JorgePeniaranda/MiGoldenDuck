@@ -13,7 +13,7 @@ export async function requestUserPermission() {
 
 export const getToken = async () =>{
     const token = await messaging().getToken() 
-    console.log('token: ', token)
+    console.log('Firebase Token: ', token)
 } 
 
 export const NotificationListener = () => {

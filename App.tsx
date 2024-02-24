@@ -11,9 +11,11 @@ export default function App(): React.JSX.Element {
 
   useEffect(() => {
     setIsLoading(true)
+    // Firebase notifications
     requestUserPermission()
     getToken()
     NotificationListener()
+    
     setIsLoading(false)
   }, [])
 
