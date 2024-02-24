@@ -1,24 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text as RNText } from 'react-native'
-
-interface Props {
-  fontSize?: number
-  fontWeight?:
-    | 'normal'
-    | 'bold'
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900'
-  textAlign?: 'left' | 'right' | 'center' | 'justify'
-  color?: string
-  children: React.ReactNode
-}
+import { TextProps } from '../../../types'
 
 export default function SimpleText({
   fontSize = 16,
@@ -26,7 +8,7 @@ export default function SimpleText({
   textAlign = 'right',
   color,
   children,
-}: Props) {
+}: TextProps) {
   const styles = StyleSheet.create({
     text: {
       fontSize,

@@ -33,7 +33,10 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen name={Routes.LOGIN} component={() => <LoginScreen />} />
-      <Tab.Screen name={Routes.REGISTER} component={() => <Text>Register</Text>} />
+      <Tab.Screen
+        name={Routes.REGISTER}
+        component={() => <Text>Register</Text>}
+      />
     </Tab.Navigator>
   )
 }
