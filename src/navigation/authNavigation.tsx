@@ -5,7 +5,7 @@ import { Text } from 'react-native'
 import LoginScreen from '../screens/loginScreen'
 import SimpleNavbar from '../components/organisms/navbar/SimpleNavbar'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
-import { getBaseColors } from '../const'
+import { Routes, getBaseColors } from '../const'
 
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
@@ -32,8 +32,8 @@ const TabNavigation = () => {
         },
       }}
     >
-      <Tab.Screen name="Ingresar" component={() => <LoginScreen />} />
-      <Tab.Screen name="Crear Cuenta" component={() => <Text>Register</Text>} />
+      <Tab.Screen name={Routes.LOGIN} component={() => <LoginScreen />} />
+      <Tab.Screen name={Routes.REGISTER} component={() => <Text>Register</Text>} />
     </Tab.Navigator>
   )
 }
@@ -43,12 +43,12 @@ export default function AuthNavigation() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Signup">
         <Stack.Screen
-          name="Auth"
+          name={Routes.AUTH}
           component={() => <TabNavigation />}
           options={{ header: SimpleNavbar }}
         />
         <Stack.Screen
-          name="Forgot"
+          name={Routes.FORGOT}
           component={() => <Text>Forgot</Text>}
           options={{ header: SimpleNavbar }}
         />
