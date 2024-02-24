@@ -1,5 +1,1 @@
-
-
-
-
-export { getBaseColors } from "./colors";
+export { getBaseColors } from './colors'

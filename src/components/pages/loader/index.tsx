@@ -7,7 +7,7 @@ import { Logos } from '../../../assets/images'
 export default function Loader() {
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={Logos.GoldenDuck}/>
+      <Image source={Logos.GoldenDuck} />
     </SafeAreaView>
   )
 }
@@ -20,5 +20,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: getBaseColors().PRIMARY,
-  }
+  },
 })
