@@ -23,18 +23,24 @@ export default function LoginScreen() {
           mode="outlined"
           label="Email"
           activeOutlineColor={getBaseColors().PRIMARY}
-          style={{ backgroundColor: 'transparent'}}
+          style={{ backgroundColor: 'transparent' }}
           outlineStyle={{ borderWidth: 0, borderBottomWidth: 1 }}
         />
         <TextInput
           mode="outlined"
           label="Contraseña"
           activeOutlineColor={getBaseColors().PRIMARY}
-          style={{ backgroundColor: 'transparent'}}
+          style={{ backgroundColor: 'transparent' }}
           outlineStyle={{ borderWidth: 0, borderBottomWidth: 1 }}
           right={<TextInput.Icon icon="eye" />}
         />
-        <View style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <View
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Switch value={true} color={getBaseColors().PRIMARY} />
           <SimpleText fontSize={16} color={getBaseColors().TEXT}>
             Recordar usuario
