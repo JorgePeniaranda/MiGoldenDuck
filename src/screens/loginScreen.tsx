@@ -12,7 +12,7 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <SimpleText
-        fontSize={27}
+        fontSize={30}
         fontWeight="600"
         textAlign="center"
         color={getBaseColors().TEXT}
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     backgroundColor: getBaseColors().DOMINANT,
-    paddingTop: 30,
-    gap: 20,
+    paddingVertical: 35,
+    gap: 25,
   },
   formContainer: {
     width: '100%',
