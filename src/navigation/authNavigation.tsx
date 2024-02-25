@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Text } from 'react-native'
-import LoginScreen from '../screens/loginScreen'
+import LoginScreen from '../screens/LoginScreen'
 import SimpleNavbar from '../components/organisms/navbar/SimpleNavbar'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { Routes, getBaseColors } from '../const'
+import RegisterScreen from '../screens/RegisterScreen'
+import ForgotScreen from '../screens/ForgotScreen'
 
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
@@ -32,10 +33,10 @@ const TabNavigation = () => {
         },
       }}
     >
-      <Tab.Screen name={Routes.LOGIN} component={() => <LoginScreen />} />
+      <Tab.Screen name={Routes.LOGIN} component={LoginScreen} />
       <Tab.Screen
         name={Routes.REGISTER}
-        component={() => <Text>Register</Text>}
+        component={RegisterScreen}
       />
     </Tab.Navigator>
   )
@@ -47,12 +48,12 @@ export default function AuthNavigation() {
       <Stack.Navigator initialRouteName="Signup">
         <Stack.Screen
           name={Routes.AUTH}
-          component={() => <TabNavigation />}
+          component={TabNavigation}
           options={{ header: SimpleNavbar }}
         />
         <Stack.Screen
           name={Routes.FORGOT}
-          component={() => <Text>Forgot</Text>}
+          component={ForgotScreen}
           options={{ header: SimpleNavbar }}
         />
       </Stack.Navigator>
