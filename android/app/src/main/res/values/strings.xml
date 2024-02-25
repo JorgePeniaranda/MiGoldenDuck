@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">migoldenduck</string>
+    <string name="app_name">Mi Golden Duck</string>
+    <color name="primary">#4f46e5</color>
 </resources>
