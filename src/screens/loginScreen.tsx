@@ -6,6 +6,7 @@ import SimpleText from '../components/atoms/text/SimpleText'
 import { Switch, TextInput } from 'react-native-paper'
 import Button from '../components/atoms/button'
 import SimpleLink from '../components/atoms/text/SimpleLink'
+import Input from '../components/atoms/input'
 
 export default function LoginScreen() {
   return (
@@ -19,19 +20,11 @@ export default function LoginScreen() {
         ¡Bienvenido a Golden Duck!
       </SimpleText>
       <View style={styles.formContainer}>
-        <TextInput
-          mode="outlined"
+        <Input
           label="Email"
-          activeOutlineColor={getBaseColors().PRIMARY}
-          style={{ backgroundColor: 'transparent' }}
-          outlineStyle={{ borderWidth: 0, borderBottomWidth: 1 }}
         />
-        <TextInput
-          mode="outlined"
+        <Input
           label="Contraseña"
-          activeOutlineColor={getBaseColors().PRIMARY}
-          style={{ backgroundColor: 'transparent' }}
-          outlineStyle={{ borderWidth: 0, borderBottomWidth: 1 }}
           right={<TextInput.Icon icon="eye" />}
         />
         <View
