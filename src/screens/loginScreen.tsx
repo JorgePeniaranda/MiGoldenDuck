@@ -7,8 +7,21 @@ import { Switch, TextInput } from 'react-native-paper'
 import Button from '../components/atoms/button'
 import SimpleLink from '../components/atoms/text/SimpleLink'
 import Input from '../components/atoms/input'
+import SecretInput from '../components/atoms/input/SecretInput'
+import { LoginForm } from '../types'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { LoginSchema } from '../useCases/loginUseCase'
+import { Controller, useForm } from 'react-hook-form'
 
 export default function LoginScreen() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm<LoginForm>({
+    resolver: zodResolver(LoginSchema)
+  })
+
   return (
     <SafeAreaView style={styles.container}>
       <SimpleText
@@ -20,12 +33,33 @@ export default function LoginScreen() {
         ¡Bienvenido a Golden Duck!
       </SimpleText>
       <View style={styles.formContainer}>
-        <Input
-          label="Email"
+        <Controller
+          control={control}
+          name='email'
+          rules={{ required: true }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input
+              label="Email"
+              onChange={onChange}
+              onBlur={onBlur}
+              value={value}
+              errorMessage={errors.email?.message}
+            />
+          )}
         />
-        <Input
-          label="Contraseña"
-          right={<TextInput.Icon icon="eye" />}
+        <Controller
+          control={control}
+          name='password'
+          rules={{ required: true }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <SecretInput
+              label="Contraseña"
+              onChange={onChange}
+              onBlur={onBlur}
+              value={value}
+              errorMessage={errors.password?.message}
+            />
+          )}
         />
         <View
           style={{
@@ -39,7 +73,7 @@ export default function LoginScreen() {
             Recordar usuario
           </SimpleText>
         </View>
-        <Button text="Ingresar" />
+        <Button text="Ingresar" onPress={handleSubmit((form) => console.log(form))} />
         <SimpleLink
           to={Routes.FORGOT}
           color={getBaseColors().LINK}

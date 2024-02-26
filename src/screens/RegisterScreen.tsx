@@ -8,6 +8,9 @@ import Button from '../components/atoms/button'
 import Input from '../components/atoms/input'
 import useStep from '../hooks/useStep'
 import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { SignUpSchema } from '../useCases/registerUseCase'
+import { SignupForm } from '../types'
 
 const labels = ["Personal", "Contacto", "Adicional"]
 
@@ -15,12 +18,11 @@ export default function RegisterScreen() {
   const {step, handleNext} = useStep()
   const {
     control,
-    watch,
     handleSubmit,
     formState: { errors, isSubmitted },
-  } = useForm()
-
-  console.log(watch('name'))
+  } = useForm<SignupForm>({
+    resolver: zodResolver(SignUpSchema)
+  })
 
   return (
     <SafeAreaView style={styles.container}>
@@ -46,6 +48,7 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.name?.message}
                   />
               }/>
               <Controller 
@@ -58,6 +61,7 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.lastName?.message}
                   />
               }/>
               <Controller 
@@ -70,9 +74,10 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.dni?.message}
                   />
               }/>
-              <Button text="Siguiente" marginTop={20} onPress={handleSubmit((data) => console.log(data))} />
+              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} />
             </View>
           </>
         )
@@ -99,6 +104,7 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.email?.message}
                   />
               }/>
               <Controller 
@@ -111,6 +117,7 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.phoneNumber?.message}
                   />
               }/>
               <Controller 
@@ -123,6 +130,7 @@ export default function RegisterScreen() {
                     onChange={onChange}
                     onBlur={onBlur}
                     value={value}
+                    errorMessage={errors.password?.message}
                   />
               }/>
               <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} />
