@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native'
 import {
   NotificationListener,
   requestUserPermission,
-} from './src/utils/Firebase'
+} from './src/services/firebaseService'
 import Loader from './src/components/pages/loader'
 import Navigation from './src/navigation'
 import { getBaseColors } from './src/const'
