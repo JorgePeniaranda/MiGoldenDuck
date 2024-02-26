@@ -17,7 +17,7 @@ export default function LoginScreen() {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitting },
   } = useForm<LoginForm>({
     resolver: zodResolver(LoginSchema)
   })
@@ -73,7 +73,7 @@ export default function LoginScreen() {
             Recordar usuario
           </SimpleText>
         </View>
-        <Button text="Ingresar" onPress={handleSubmit((form) => console.log(form))} />
+        <Button text="Ingresar" onPress={handleSubmit((form) => console.log(form))} loading={isSubmitting} />
         <SimpleLink
           to={Routes.FORGOT}
           color={getBaseColors().LINK}

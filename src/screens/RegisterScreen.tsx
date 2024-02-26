@@ -19,7 +19,7 @@ export default function RegisterScreen() {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitting },
   } = useForm<SignupForm>({
     resolver: zodResolver(SignUpSchema)
   })
@@ -77,7 +77,7 @@ export default function RegisterScreen() {
                     errorMessage={errors.dni?.message}
                   />
               }/>
-              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} />
+              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} loading={isSubmitting} />
             </View>
           </>
         )
@@ -133,7 +133,7 @@ export default function RegisterScreen() {
                     errorMessage={errors.password?.message}
                   />
               }/>
-              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} />
+              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} loading={isSubmitting} />
             </View>
           </>
         )
@@ -153,7 +153,7 @@ export default function RegisterScreen() {
               <Input label='Domicilio'/>
               <Input label='Fecha de nacimiento'/>
               <Input label='Sexo'/>
-              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} />
+              <Button text="Siguiente" marginTop={20} onPress={handleSubmit(handleNext)} loading={isSubmitting} />
             </View>
           </>
         )
