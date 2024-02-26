@@ -17,7 +17,7 @@ export default function App(): React.JSX.Element {
     requestUserPermission()
     NotificationListener()
 
-    setIsLoading(true)
+    setIsLoading(false)
   }, [])
 
   if(isLoading) return <Loader />
