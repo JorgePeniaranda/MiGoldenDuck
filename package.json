@@ -1,6 +1,7 @@
 {
   "name": "migoldenduck",
   "version": "1.0.0",
+  "description": "Mobile wallet app for smooth money transfers, secure online payments, and simplified financial tracking.",
   "private": true,
   "author": "Lycokat",
   "license": "MIT",
