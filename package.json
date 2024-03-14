@@ -2,6 +2,24 @@
   "name": "migoldenduck",
   "version": "1.0.0",
   "private": true,
+  "author": "Lycokat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lycokat/MiGoldenDuck/issues"
+  },
+  "homepage": "https://github.com/Lycokat/MiGoldenDuck#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lycokat/MiGoldenDuck.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">20"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
