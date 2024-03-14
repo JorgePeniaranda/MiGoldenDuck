@@ -32,7 +32,7 @@ This project is intended for educational and illustrative purposes only and is n
 1. Clone the repository
 
 ```bash
-git clone https://github.com/JorgePeniaranda/MiGoldenDuck/
+git clone https://github.com/Lycokat/MiGoldenDuck/
 ```
 
 <br/>
